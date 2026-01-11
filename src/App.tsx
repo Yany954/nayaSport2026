@@ -10,7 +10,7 @@ import PageTransition from './components/PageTransition';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
-import FAQs from './pages/FAQS';
+import Faqs from './pages/Faqs';
 import CustomUniform from './pages/CustomUniform';
 
 // Componente envolvedor para las transiciones
@@ -48,7 +48,7 @@ const AnimatedRoutes: React.FC = () => {
           path="/preguntas"
           element={
             <PageTransition>
-              <FAQs />
+              <Faqs />
             </PageTransition>
           }
         />
