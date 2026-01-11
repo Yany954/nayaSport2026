@@ -3,7 +3,7 @@ import { ChevronDown, Search, Palette, Package, Clock, CreditCard, Phone, Mail }
 import { motion, AnimatePresence } from 'framer-motion';
 
 
-const Faqs = () => {
+const Question = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
@@ -216,4 +216,4 @@ const Faqs = () => {
   );
 };
 
-export default Faqs;
+export default Question;
