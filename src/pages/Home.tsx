@@ -367,6 +367,7 @@ const Home: React.FC = () => {
             Obtén una cotización personalizada en menos de 24 horas
           </p>
           <motion.button
+            onClick={() => navigate('/uniformes')}
             className="bg-white text-blue-900 px-10 py-5 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all shadow-xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

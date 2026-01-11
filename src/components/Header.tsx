@@ -28,9 +28,12 @@ const Header: React.FC = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-white/95 shadow-md'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-900 transform rotate-45 group-hover:rotate-90 transition-transform duration-300"></div>
-            <span className="text-xl font-bold text-gray-900">NAYA SPORT</span>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <img 
+              src="/logo-naya-2026.png" 
+              alt="Logo Naya Sport" 
+              className="w-25 h-20 object-contain"
+            />
           </Link>
 
           {/* Desktop Menu */}

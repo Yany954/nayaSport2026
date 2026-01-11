@@ -10,7 +10,6 @@ const Footer: React.FC = () => {
         {/* Column 1: Identity */}
         <div>
           <div className="flex items-center space-x-2 mb-4">
-            <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-600 transform rotate-45"></div>
             <span className="text-xl font-bold">NAYA SPORT</span>
           </div>
           <p className="text-gray-400 mb-2">Unique Sporty Style</p>

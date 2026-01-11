@@ -19,7 +19,7 @@ const AboutUs = () => {
 
   const clients = [
     'Universidad EAN', 'COOMEVA', 'La Equidad', 'Uniminuto',
-    'Fundación San Antonio', 'COMFABOY', 'Liga Guainía', 
+    'San Antonio', 'COMFABOY', 'Liga Guainía', 
     'Escuela El Minuto FC', 'Ubaté FC', 'REFEREE'
   ];
 
@@ -208,7 +208,7 @@ const AboutUs = () => {
               <div className="text-6xl mb-6">🇨🇴</div>
               <h2 className="text-4xl font-black mb-6">El Orgullo de lo Nuestro</h2>
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                Nuestra producción es <span className="font-bold text-blue-900">100% nacional</span>. Usamos telas <span className="font-bold text-cyan-600">DryFit</span> de alta tecnología fabricadas en Colombia.
+                Nuestra producción es <span className="font-bold text-blue-900">100% nacional</span>. Usamos telas <span className="font-bold text-cyan-600">especiales</span> de alta tecnología de acuerdo a las necesidades del cliente.
               </p>
               <div className="inline-flex bg-white px-6 py-3 rounded-full shadow-lg font-bold text-sm text-gray-600">
                 🌱 Industria Local • 🏆 Calidad Garantizada • 🏭 Empleo Nacional
