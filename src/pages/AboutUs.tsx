@@ -1,12 +1,6 @@
-import React from 'react';
 import { Target, Eye, Award, Users, TrendingUp, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// Componentes Reutilizables
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import WhatsAppButton from '../components/WhatsAppButton';
-import PageTransition from '../components/PageTransition';
 
 const AboutUs = () => {
   const timeline = [

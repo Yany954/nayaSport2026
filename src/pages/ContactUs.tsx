@@ -2,11 +2,6 @@ import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, CheckCircle, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Componentes Reutilizables
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import WhatsAppButton from '../components/WhatsAppButton';
-import PageTransition from '../components/PageTransition';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({

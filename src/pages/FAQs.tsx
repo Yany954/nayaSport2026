@@ -1,12 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ChevronDown, Search, Palette, Package, Clock, CreditCard, Phone, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Componentes Reutilizables
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import WhatsAppButton from '../components/WhatsAppButton';
-import PageTransition from '../components/PageTransition';
 
 const FAQs = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
