@@ -59,7 +59,7 @@ const Question = () => {
     {
       category: 'pedidos',
       question: '¿Tienen experiencia con equipos reconocidos?',
-      answer: 'Sí, más de 15 años. Hemos vestido a la Universidad EAN, COOMEVA, La Equidad, Uniminuto y muchas más.'
+      answer: 'Sí, más de 15 años. Hemos vestido a la Universidad EAN, La Alcaldía de Pailitas, Fly Volleyball Team y muchas más.'
     }
   ];
 

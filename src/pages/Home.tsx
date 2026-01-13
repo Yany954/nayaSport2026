@@ -13,8 +13,7 @@ const Home: React.FC = () => {
     }
   };
   const clients = [
-    'Universidad EAN', 'COOMEVA', 'La Equidad',
-    'Uniminuto', 'Fundación San Antonio', 'COMFABOY'
+    'Universidad EAN', 'La Alcaldía de Curumaní','Fly Volleyball Team', 'Uniminuto', 'COMFABOY', 'Jardín Infantil Play School'
   ];
 
   const benefits = [
@@ -25,17 +24,17 @@ const Home: React.FC = () => {
   ];
 
   const uniformGallery = [
-    { name: 'Fútbol Profesional', client: 'La Equidad', color: 'bg-green-600' },
-    { name: 'Basketball Universitario', client: 'Universidad EAN', color: 'bg-blue-700' },
-    { name: 'Ciclismo Elite', client: 'COOMEVA', color: 'bg-red-600' },
-    { name: 'Voleibol Escolar', client: 'Uniminuto', color: 'bg-purple-600' },
-    { name: 'Atletismo', client: 'San Antonio', color: 'bg-yellow-600' },
-    { name: 'Fútbol Infantil', client: 'El Minuto FC', color: 'bg-orange-600' }
+    { name: 'Uniformes de colegio', client: 'Jardín Infantil Play School', color: 'bg-blue-700', image: 'src/assets/soccer_amarillo.png' },
+    { name: 'Basketball Universitario', client: 'Universidad EAN', color: 'bg-blue-700', image: 'src/assets/EAN.png'  },
+    { name: 'Dotaciones', client: 'La Alcaldía de Pailitas', color: 'bg-red-600', image: 'src/assets/soccer_verde.png'  },
+    { name: 'Voleibol Escolar', client: 'Fly Volleyball Team', color: 'bg-purple-600', image: 'src/assets/voleyball.png'  },
+    { name: 'Baloncesto', client: 'Uniminuto', color: 'bg-yellow-600', image: 'src/assets/soccer_naranja.png'  },
+    { name: 'Dotaciones', client: 'La Alcaldía de Curumaní', color: 'bg-orange-600', image: 'src/assets/alcaldia_curumani.png' }
   ];
 
   const testimonials = [
-    { name: 'Carlos Rodríguez', team: 'Ubaté FC', text: 'Calidad excepcional y entrega a tiempo. Nuestros jugadores están felices.' },
-    { name: 'Ana Martínez', team: 'Liga Guainía', text: 'Los diseños superaron nuestras expectativas. 100% recomendados.' }
+    { name: 'Milena Ovalle', team: 'Jardín Infantil Play School', text: 'Ya más de 8 años siendo los proveedores de  los uniformes de nuestra institución, manteniendo siempre la impecable calidad, y precios muy asequibles para nuestros estudiantes' },
+    { name: 'Oscar Serna', team: 'Liga Guainía', text: 'Los diseños superaron nuestras expectativas. 100% recomendados.' }
   ];
 
   // Variantes de animación para Framer Motion
@@ -111,7 +110,7 @@ const Home: React.FC = () => {
               >
                 {[
                   { value: '15+', label: 'Años de experiencia' },
-                  { value: '500+', label: 'Equipos vestidos' },
+                  { value: '80+', label: 'Equipos vestidos' },
                   { value: '10', label: 'Unidades mínimas' }
                 ].map((stat, idx) => (
                   <motion.div key={idx} variants={fadeInUp}>
@@ -228,34 +227,40 @@ const Home: React.FC = () => {
               Nuestras Creaciones
             </h2>
             <p className="text-center text-gray-600 mb-12">
-              Cada uniforme cuenta una historia de pasión y dedicación
+              Cada prenda refleja nuestro estándar de calidad y acabado.
             </p>
           </motion.div>
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-3 gap-4"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {uniformGallery.map((item, idx) => (
-              <motion.div
-                key={idx}
-                className="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer"
-                variants={fadeInUp}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className={`absolute inset-0 ${item.color} transition-transform group-hover:scale-110`}></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <h3 className="text-white font-bold text-lg">{item.name}</h3>
-                  <p className="text-gray-300 text-sm">{item.client}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      className="grid grid-cols-2 md:grid-cols-3 gap-4"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      {uniformGallery.map((item, idx) => (
+        <motion.div
+          key={idx}
+          className="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer shadow-md"
+          variants={fadeInUp}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
+        >
+          <img 
+            src={item.image} 
+            alt={item.name} 
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+
+          {/* Overlay oscuro para que el texto sea legible (se mantiene) */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 className="text-white font-bold text-lg">{item.name}</h3>
+            <p className="text-gray-300 text-sm">{item.client}</p>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
       {/* Process Section */}
       <section className="py-20 px-4">
@@ -316,7 +321,7 @@ const Home: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Lo que dicen nuestros capitanes
+            Lo que dicen nuestros clientes
           </motion.h2>
           <motion.div
             className="grid md:grid-cols-2 gap-8"

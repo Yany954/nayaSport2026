@@ -18,9 +18,9 @@ const AboutUs = () => {
   ];
 
   const clients = [
-    'Universidad EAN', 'COOMEVA', 'La Equidad', 'Uniminuto',
-    'San Antonio', 'COMFABOY', 'Liga Guainía', 
-    'Escuela El Minuto FC', 'Ubaté FC', 'REFEREE'
+    '   Universidad EAN  ', ' La Alcaldía de Pailitas ', ' Fly Volleyball Team ', 'Jardín Infantil Play School',
+    'Fundación San Antonio', '    COMFABOY   ', '   Liga Guainía   ', 
+    'La Alcaldía de Curumaní', '    Ubaté FC    ', '    REFEREE    '
   ];
 
   // Variantes para animaciones al hacer scroll
@@ -52,7 +52,7 @@ const AboutUs = () => {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-900"> somos equipo</span>
               </h1>
               <p className="text-2xl text-gray-600 font-light italic">
-                15 años vistiendo la pasión de Colombia
+                15 años materializando la identidad de tu equipo
               </p>
             </motion.div>
           </section>
@@ -69,7 +69,7 @@ const AboutUs = () => {
                 >
                   <h2 className="text-4xl font-black mb-6 text-blue-900">Nuestra Trayectoria</h2>
                   <p className="text-gray-700 mb-4 leading-relaxed">
-                    Desde hace más de una década, hemos trabajado con instituciones de prestigio como la <span className="font-bold text-cyan-600">Universidad EAN</span>, <span className="font-bold text-cyan-600">COOMEVA</span>, <span className="font-bold text-cyan-600">La Equidad</span> y la <span className="font-bold text-cyan-600">Fundación San Antonio</span>.
+                    Desde hace más de una década, hemos trabajado con instituciones de prestigio como la <span className="font-bold text-cyan-600">Universidad EAN</span>, <span className="font-bold text-cyan-600">Jardín Infantil Play School</span>, y la <span className="font-bold text-cyan-600">Fundación San Antonio</span>.
                   </p>
                   <p className="text-gray-700 mb-4 leading-relaxed">
                     Nuestra pasión por el deporte nos ha convertido en el aliado preferido de equipos profesionales y escolares en toda Colombia.
@@ -90,7 +90,7 @@ const AboutUs = () => {
                     <div className="grid grid-cols-2 gap-6">
                       {[
                         { val: '15+', lab: 'Años de experiencia', color: 'text-cyan-600' },
-                        { val: '500+', lab: 'Equipos vestidos', color: 'text-blue-900' },
+                        { val: '80+', lab: 'Equipos vestidos', color: 'text-blue-900' },
                         { val: '100%', lab: 'Hecho en Colombia', color: 'text-cyan-600' },
                         { val: '2', lab: 'Sedes nacionales', color: 'text-blue-900' }
                       ].map((stat, i) => (

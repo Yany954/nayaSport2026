@@ -18,7 +18,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["vite/client"]
   },
   "include": ["src", "tailwind.config.js", "src/pages/.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]

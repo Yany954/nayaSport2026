@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
             </li>
             <li className="flex items-start gap-2">
               <MapPin size={18} className="mt-1 flex-shrink-0" />
-              <span>Curumaní, Cesar: Calle 3 #12-26</span>
+              <span>Curumaní, Cesar: Calle 3 #12-26, Barrio La Trini</span>
             </li>
           </ul>
         </div>
