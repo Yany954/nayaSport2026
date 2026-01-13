@@ -24,11 +24,11 @@ const Home: React.FC = () => {
   ];
 
   const uniformGallery = [
-    { name: 'Uniformes de colegio', client: 'Jardín Infantil Play School', color: 'bg-blue-700', image: 'src/assets/soccer_amarillo.png' },
+    { name: '', client: '', color: 'bg-blue-700', image: 'src/assets/soccer_amarillo.png' },
     { name: 'Basketball Universitario', client: 'Universidad EAN', color: 'bg-blue-700', image: 'src/assets/EAN.png'  },
-    { name: 'Dotaciones', client: 'La Alcaldía de Pailitas', color: 'bg-red-600', image: 'src/assets/soccer_verde.png'  },
+    { name: '', client: '', color: 'bg-red-600', image: 'src/assets/soccer_verde.png'  },
     { name: 'Voleibol Escolar', client: 'Fly Volleyball Team', color: 'bg-purple-600', image: 'src/assets/voleyball.png'  },
-    { name: 'Baloncesto', client: 'Uniminuto', color: 'bg-yellow-600', image: 'src/assets/soccer_naranja.png'  },
+    { name: '', client: '', color: 'bg-yellow-600', image: 'src/assets/soccer_naranja.png'  },
     { name: 'Dotaciones', client: 'La Alcaldía de Curumaní', color: 'bg-orange-600', image: 'src/assets/alcaldia_curumani.png' }
   ];
 
