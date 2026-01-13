@@ -3,6 +3,15 @@ import { ChevronRight, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
+// ✅ IMPORTAR IMÁGENES CORRECTAMENTE
+import heroImage from '../assets/uniformes-hero.png';
+import soccerAmarillo from '../assets/soccer_amarillo.png';
+import eanImage from '../assets/EAN.png';
+import soccerVerde from '../assets/soccer_verde.png';
+import volleyballImage from '../assets/voleyball.png';
+import soccerNaranja from '../assets/soccer_naranja.png';
+import alcaldiaCurumani from '../assets/alcaldia_curumani.png';
+
 const Home: React.FC = () => {
   const navigate = useNavigate();
 
@@ -12,8 +21,10 @@ const Home: React.FC = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
   const clients = [
-    'Universidad EAN', 'La Alcaldía de Curumaní','Fly Volleyball Team', 'Uniminuto', 'COMFABOY', 'Jardín Infantil Play School'
+    'Universidad EAN', 'La Alcaldía de Curumaní', 'Fly Volleyball Team', 
+    'Uniminuto', 'COMFABOY', 'Jardín Infantil Play School'
   ];
 
   const benefits = [
@@ -23,21 +34,30 @@ const Home: React.FC = () => {
     { icon: '🎨', title: 'Diseño Digital', desc: 'Creamos tu montaje full color antes de fabricar' }
   ];
 
+  // ✅ ARREGLADO: Ahora usa imports correctos
   const uniformGallery = [
-    { name: '', client: '', color: 'bg-blue-700', image: 'src/assets/soccer_amarillo.png' },
-    { name: 'Basketball Universitario', client: 'Universidad EAN', color: 'bg-blue-700', image: 'src/assets/EAN.png'  },
-    { name: '', client: '', color: 'bg-red-600', image: 'src/assets/soccer_verde.png'  },
-    { name: 'Voleibol Escolar', client: 'Fly Volleyball Team', color: 'bg-purple-600', image: 'src/assets/voleyball.png'  },
-    { name: '', client: '', color: 'bg-yellow-600', image: 'src/assets/soccer_naranja.png'  },
-    { name: 'Dotaciones', client: 'La Alcaldía de Curumaní', color: 'bg-orange-600', image: 'src/assets/alcaldia_curumani.png' }
+    { name: 'Uniforme de Fútbol', client: 'Equipos Locales', image: soccerAmarillo },
+    { name: 'Basketball Universitario', client: 'Universidad EAN', image: eanImage },
+    { name: 'Uniforme de Fútbol', client: 'Equipos Profesionales', image: soccerVerde },
+    { name: 'Voleibol Escolar', client: 'Fly Volleyball Team', image: volleyballImage },
+    { name: 'Uniforme de Fútbol', client: 'Equipos Juveniles', image: soccerNaranja },
+    { name: 'Dotaciones', client: 'La Alcaldía de Curumaní', image: alcaldiaCurumani }
   ];
 
   const testimonials = [
-    { name: 'Milena Ovalle', team: 'Jardín Infantil Play School', text: 'Ya más de 8 años siendo los proveedores de  los uniformes de nuestra institución, manteniendo siempre la impecable calidad, y precios muy asequibles para nuestros estudiantes' },
-    { name: 'Oscar Serna', team: 'Liga Guainía', text: 'Los diseños superaron nuestras expectativas. 100% recomendados.' }
+    { 
+      name: 'Milena Ovalle', 
+      team: 'Jardín Infantil Play School', 
+      text: 'Ya más de 8 años siendo los proveedores de los uniformes de nuestra institución, manteniendo siempre la impecable calidad, y precios muy asequibles para nuestros estudiantes' 
+    },
+    { 
+      name: 'Oscar Serna', 
+      team: 'Liga Guainía', 
+      text: 'Los diseños superaron nuestras expectativas. 100% recomendados.' 
+    }
   ];
 
-  // Variantes de animación para Framer Motion
+  // Variantes de animación
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -47,9 +67,7 @@ const Home: React.FC = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
+      transition: { staggerChildren: 0.1 }
     }
   };
 
@@ -64,25 +82,22 @@ const Home: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              className="space-y-6"
-              variants={fadeInUp}
-            >
-              <motion.div
-                className="inline-block"
-                whileHover={{ scale: 1.05 }}
-              >
+            <motion.div className="space-y-6" variants={fadeInUp}>
+              <motion.div className="inline-block" whileHover={{ scale: 1.05 }}>
                 <span className="bg-cyan-100 text-cyan-600 px-4 py-2 rounded-full text-sm font-semibold">
                   🇨🇴 Hecho en Colombia
                 </span>
               </motion.div>
+              
               <h1 className="text-5xl md:text-6xl font-black text-gray-900 leading-tight">
                 Lleva la identidad de tu equipo al
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-900"> siguiente nivel</span>
               </h1>
+              
               <p className="text-xl text-gray-600">
                 Diseño 100% personalizado con tecnología DryFit y más de <span className="font-bold text-cyan-500">15 años de experiencia</span>
               </p>
+              
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.button
                   onClick={() => navigate('/uniformes')}
@@ -93,15 +108,17 @@ const Home: React.FC = () => {
                   Cotiza tu diseño ahora
                   <ChevronRight size={20} />
                 </motion.button>
+                
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={scrollToGallery} // Añade el evento onClick aquí
+                  onClick={scrollToGallery}
                   className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-8 py-4 rounded-lg font-bold text-lg transition-all"
                 >
                   Ver galería
                 </motion.button>
               </div>
+              
               <motion.div
                 className="flex items-center gap-8 pt-4"
                 variants={staggerContainer}
@@ -121,25 +138,28 @@ const Home: React.FC = () => {
               </motion.div>
             </motion.div>
 
+            {/* ✅ IMAGEN HERO ARREGLADA */}
             <motion.div
               className="relative"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              {/* Fondo decorativo inclinado (se mantiene igual) */}
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-900/20 rounded-3xl transform rotate-3"></div>
-
-              {/* Contenedor principal de la imagen */}
+              
               <motion.div
                 className="relative bg-white rounded-3xl shadow-2xl p-3 transform -rotate-1 overflow-hidden"
                 whileHover={{ rotate: 0, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="/uniformes-hero.png"
+                  src={heroImage}
                   alt="Exhibición de uniformes deportivos personalizados Naya Sport"
                   className="w-full h-full aspect-square object-cover rounded-2xl"
+                  onError={(e) => {
+                    console.error('Error cargando imagen hero');
+                    e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23f0f0f0" width="400" height="400"/%3E%3Ctext fill="%23999" x="50%25" y="50%25" text-anchor="middle" font-size="18"%3ENaya Sport%3C/text%3E%3C/svg%3E';
+                  }}
                 />
               </motion.div>
             </motion.div>
@@ -190,6 +210,7 @@ const Home: React.FC = () => {
               Combinamos tecnología de punta con experiencia artesanal para crear uniformes que inspiran
             </p>
           </motion.div>
+          
           <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
             variants={staggerContainer}
@@ -214,8 +235,8 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section id="galeria" className="py-20 px-4 bg-gray-50"> {/* Añade id="galeria" aquí */}
+      {/* Gallery Section - ✅ ARREGLADA */}
+      <section id="galeria" className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -230,37 +251,43 @@ const Home: React.FC = () => {
               Cada prenda refleja nuestro estándar de calidad y acabado.
             </p>
           </motion.div>
+          
           <motion.div
-      className="grid grid-cols-2 md:grid-cols-3 gap-4"
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
-      {uniformGallery.map((item, idx) => (
-        <motion.div
-          key={idx}
-          className="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer shadow-md"
-          variants={fadeInUp}
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.3 }}
-        >
-          <img 
-            src={item.image} 
-            alt={item.name} 
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
+            className="grid grid-cols-2 md:grid-cols-3 gap-4"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {uniformGallery.map((item, idx) => (
+              <motion.div
+                key={idx}
+                className="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer shadow-md bg-gray-100"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src={item.image}
+                  alt={`${item.name} - ${item.client}`}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                  onError={(e) => {
+                    console.error(`Error cargando imagen: ${item.name}`);
+                    e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23f0f0f0" width="400" height="400"/%3E%3Ctext fill="%23999" x="50%25" y="50%25" text-anchor="middle"%3E👕%3C/text%3E%3C/svg%3E';
+                  }}
+                />
 
-          {/* Overlay oscuro para que el texto sea legible (se mantiene) */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <h3 className="text-white font-bold text-lg">{item.name}</h3>
-            <p className="text-gray-300 text-sm">{item.client}</p>
-          </div>
-        </motion.div>
-      ))}
-    </motion.div>
-  </div>
-</section>
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-white font-bold text-lg">{item.name}</h3>
+                  <p className="text-gray-300 text-sm">{item.client}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
       {/* Process Section */}
       <section className="py-20 px-4">
@@ -278,6 +305,7 @@ const Home: React.FC = () => {
               De la idea a la cancha en tres pasos
             </p>
           </motion.div>
+          
           <motion.div
             className="grid md:grid-cols-3 gap-8"
             variants={staggerContainer}
@@ -290,11 +318,7 @@ const Home: React.FC = () => {
               { num: '02', title: 'Diseña', desc: 'Envíanos tu idea o logos en PDF. Creamos el montaje digital' },
               { num: '03', title: 'Recibe', desc: 'Entrega en 15-20 días hábiles a todo Colombia' }
             ].map((step, idx) => (
-              <motion.div
-                key={idx}
-                className="relative"
-                variants={fadeInUp}
-              >
+              <motion.div key={idx} className="relative" variants={fadeInUp}>
                 <div className="text-8xl font-black text-cyan-100 absolute -top-8 -left-4 -z-10">
                   {step.num}
                 </div>
@@ -323,6 +347,7 @@ const Home: React.FC = () => {
           >
             Lo que dicen nuestros clientes
           </motion.h2>
+          
           <motion.div
             className="grid md:grid-cols-2 gap-8"
             variants={staggerContainer}
